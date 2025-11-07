@@ -63,17 +63,17 @@ Since the target variable is **imbalanced**, the model’s performance is evalua
 ##  Mini EDA Visualizations
 
 **Target Distribution**
-![Class Distribution](images\sales_class_distribution.png)  
+![Class Distribution](images/sales_class_distribution.png)  
 
 **Sales_Volume vs Sales_Classification (Boxplot)**
-![Sales Volume Separation](images\boxplot_class_volum.png)  
+![Sales Volume Separation](images/boxplot_class_volum.png)  
 
 *Observation:*  
 `Sales_Volume` shows an almost perfect separation between *Low* and *High* sales classes,  
 indicating a potential **data leakage** — a finding later confirmed through modeling.
 
 **Top 10 Feature Importances (GridSearchCV Model) with `Sales_Volume`**
-![Feature Importance with Sales_Volume](images/feature_importance_with_sales_volume.png)
+![Feature Importance with Sales_Volume](images/feature_importance_with_volume.png)
 
 *Observation:*  
 `Sales_Volume` overwhelmingly dominates the model, confirming potential **data leakage**.  
