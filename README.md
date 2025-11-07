@@ -1,38 +1,103 @@
-## Business Context & Problem Statement
+# BMW Sales EDA & Classification
 
-### Business Context
-Car dealers and automotive market analysts often need to assess the market value of vehicles. An accurate price prediction model allows faster decision-making for buying and selling, helps optimize revenue, and reduces financial risks. Additionally, understanding which features most influence car prices can provide insights for pricing strategies and inventory management.
+![Python](https://img.shields.io/badge/Python-3.10+-blue) ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange) ![License](https://img.shields.io/badge/License-MIT-green)
 
-### Problem Statement
-The goal of this project is to build a linear regression model to predict the price of BMW cars based on historical sales data from 2010 to 2024. The model will take into account car features such as year of manufacture, model, engine size, transmission type, and other relevant attributes. By providing reliable price estimates, the model supports business and analytical decision-making for both dealers and buyers.
+**Author:** Anastasiya Safonova  
+**Date:** 2025  
 
-### Dataset Overview
-The dataset used in this project is the **BMW Worldwide Sales Records (2010–2024)** from Kaggle. It contains approximately 50,000 records with features including:
+**Description:** Exploratory Data Analysis of BMW sales (2010–2024) and a classification model to predict sales level (`High` / `Low`).
 
-- Car model and variant  
-- Year of manufacture  
-- Engine specifications  
-- Transmission type  
-- Country/region of sale  
-- Sales price  
+---
 
-The target variable for prediction is:  
-- **Price** — the sale price of the vehicle.  
+## 📊 Business Context & Problem Statement
 
-The predictor variables (features) include year, model, engine size, transmission type, and other relevant car attributes.
+Automotive dealers and analysts need to predict whether a BMW model will have **high** or **low** sales in order to optimize inventory, marketing, and financial decisions.  
 
-### Evaluation Metrics
-The model's performance will be evaluated using the following metrics:
+This project builds a **classification model** using features such as:
+**Model**,**Year**,**Region**,**Color**,**Fuel_Type,Transmission**,**Engine_Size_L**,**Mileage_KM**,**Price_USD**,**Sales_Volume** 
+to predict the target variable **Sales_Classification** (*High* / *Low*).
 
-- **Mean Absolute Error (MAE):** Measures the average absolute difference between predicted and actual car prices. Lower values indicate better accuracy and interpretability in euros.  
-- **Root Mean Squared Error (RMSE):** Shows how much predictions deviate from actual prices in the same units, sensitive to large errors.  
-- **R² (R-squared):** Indicates the proportion of variance in car prices explained by the model. Values closer to 1 indicate a better fit.  
+The dataset covers **BMW worldwide sales records from 2010 to 2024**,  
+including approximately **50,000 records**.
 
-**Optional metrics for additional analysis:**  
-- **Adjusted R²:** Corrected for the number of features; useful to evaluate whether adding new variables improves the model meaningfully.  
-- **Mean Absolute Percentage Error (MAPE):** Measures error in percentage terms; useful for understanding relative prediction errors.
+Based on the data:
+- **Low sales** correspond to models with `Sales_Volume` between **100–6,999 units**,  
+- **High sales** correspond to models with `Sales_Volume` between **7,000–9,999 units**.
 
-### Assumptions & Limitations
-- The dataset may not include all possible car features affecting price.  
-- Market conditions and regional differences may influence prices but are not fully captured.  
-- Linear regression assumes a linear relationship between features and car price.
+This clear boundary in `Sales_Volume` strongly influences the target definition and raises potential concerns about **data leakage**, which the project investigates in detail.
+
+
+---
+
+## Dataset Overview
+- Source: [BMW Worldwide Sales Records (2010–2024) on Kaggle](https://www.kaggle.com/datasets/ahmadrazakashif/bmw-worldwide-sales-records-20102024)  
+- ~50,000 records  
+- Key features: `Model`, `Year`, `Engine_Size_L`, `Transmission`, `Fuel_Type`, `Color`, `Mileage_KM`, `Price_USD`, `Region`  
+- Target variable: `Sales_Classification` (High / Low)
+
+---
+
+## Evaluation Metrics
+
+Since the target variable is **imbalanced**, the model’s performance is evaluated mainly using:
+
+| Metric       | Description |
+|-------------|-------------|
+| F1 Score     | Harmonic mean of Precision & Recall; balances false positives and false negatives. |
+| Precision    | Proportion of predicted `High` sales that are correct. |
+| Recall       | Proportion of actual `High` sales correctly identified. |
+| ROC AUC      | Ability to distinguish between `High` and `Low` classes. |
+
+**Note:** Accuracy is shown for reference but can be misleading due to class imbalance.
+
+---
+
+## Key Findings
+- The target is **imbalanced**, requiring `class_weight='balanced'`.  
+- `Sales_Volume` almost perfectly separates classes → **potential data leakage**.  
+- Removing `Sales_Volume`, performance drops (Accuracy ~0.57–0.69, ROC AUC ~0.5).  
+- Remaining features alone are insufficient for accurate classification, highlighting the importance of feature selection.
+
+---
+
+##  Mini EDA Visualizations
+
+**Target Distribution**
+![Class Distribution](\images\sales_class_distribution.png)  
+
+**Sales_Volume vs Sales_Classification (Boxplot)**
+![Sales Volume Separation](\images\boxplot_class_volum.png)  
+
+*Observation:*  
+`Sales_Volume` shows an almost perfect separation between *Low* and *High* sales classes,  
+indicating a potential **data leakage** — a finding later confirmed through modeling.
+
+
+---
+
+## How to Run
+1. Clone the repository:
+```bash
+git clone https://github.com/Safonovanastya87/bmw-sales-eda-classification.git
+2. Download the dataset from Kaggle:
+   [BMW Worldwide Sales Records (2010–2024)](https://www.kaggle.com/datasets/ahmadrazakashif/bmw-worldwide-sales-records-20102024)
+   and place it in the `data/` folder.
+
+3. Install dependencies:
+```bash
+Копировать код
+Next Steps / Recommendations
+
+Explore additional feature engineering.
+
+Test other models (XGBoost, LightGBM).
+
+Apply oversampling/undersampling for imbalanced classes.
+
+Check for dominant features to avoid data leakage.
+pip install -r requirements.txt
+Launch the notebook:
+
+bash
+Копировать код
+jupyter notebook notebooks/BMW_Sales_EDA.ipynb
