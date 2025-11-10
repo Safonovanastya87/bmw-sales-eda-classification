@@ -9,7 +9,7 @@
 
 ---
 
-## 📊 Business Context & Problem Statement
+## Business Context & Problem Statement
 
 Automotive dealers and analysts need to predict whether a BMW model will have **high** or **low** sales in order to optimize inventory, marketing, and financial decisions.  
 
@@ -37,7 +37,7 @@ This clear boundary in `Sales_Volume` strongly influences the target definition 
 - Target variable: `Sales_Classification` (High / Low)
 
 ---
-## 📂 Project Structure
+## Project Structure
 ```
 bmw-sales-eda-classification/
 ├── data/                 # Raw CSV datasets
@@ -66,7 +66,7 @@ Since the target variable is **imbalanced**, the model’s performance is evalua
 
 ---
 
-## 🛠 Modeling Summary
+## Modeling Summary
 
 | Model                       | Accuracy | F1  | ROC AUC |
 |-----------------------------|---------|-----|---------|
