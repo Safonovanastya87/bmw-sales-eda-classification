@@ -30,10 +30,24 @@ This clear boundary in `Sales_Volume` strongly influences the target definition 
 ---
 
 ## Dataset Overview
+
 - Source: [BMW Worldwide Sales Records (2010–2024) on Kaggle](https://www.kaggle.com/datasets/ahmadrazakashif/bmw-worldwide-sales-records-20102024)  
 - ~50,000 records  
 - Key features: `Model`, `Year`, `Engine_Size_L`, `Transmission`, `Fuel_Type`, `Color`, `Mileage_KM`, `Price_USD`, `Region`  
 - Target variable: `Sales_Classification` (High / Low)
+
+---
+## 📂 Project Structure
+```
+bmw-sales-eda-classification/
+├── data/                 # Raw CSV datasets
+├── images/               # Figures for README
+├── notebooks/            # Jupyter notebooks
+│   └── bmw_sales_analysis.ipynb
+├── requirements.txt      # Python dependencies
+├── README.md             # Project documentation
+└── LICENSE               # License file
+```
 
 ---
 
@@ -49,6 +63,22 @@ Since the target variable is **imbalanced**, the model’s performance is evalua
 | ROC AUC      | Ability to distinguish between `High` and `Low` classes. |
 
 **Note:** Accuracy is shown for reference but can be misleading due to class imbalance.
+
+---
+
+## 🛠 Modeling Summary
+
+| Model                       | Accuracy | F1  | ROC AUC |
+|-----------------------------|---------|-----|---------|
+| Baseline (with Sales_Volume) | 1.00    | 1.0 | 1.0     |
+| GridSearch (with Sales_Volume)| 1.00   | 1.0 | 1.0     |
+| Baseline (without Sales_Volume)| 0.57  | 0.56| 0.50    |
+| GridSearch (without Sales_Volume)| 0.69| 0.68| 0.50    |
+
+**Feature Engineering Highlights:**  
+- `Year` → `Years_Since_First_Sale`  
+- Standard scaling for numeric features  
+- One-hot encoding for categorical features  
 
 ---
 
@@ -83,28 +113,28 @@ Other features contribute very little to the prediction.
 ---
 
 ## How to Run
-1. Clone the repository:
-```bash
-git clone https://github.com/Safonovanastya87/bmw-sales-eda-classification.git
-2. Download the dataset from Kaggle:
-   [BMW Worldwide Sales Records (2010–2024)](https://www.kaggle.com/datasets/ahmadrazakashif/bmw-worldwide-sales-records-20102024)
-   and place it in the `data/` folder.
 
-3. Install dependencies:
-```bash
-Копировать код
-Next Steps / Recommendations
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/Safonovanastya87/bmw-sales-eda-classification.git
+    cd bmw-sales-eda-classification
+    ```
 
-Explore additional feature engineering.
+2. **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Test other models (XGBoost, LightGBM).
+3. **Open the Jupyter Notebook:**
+    ```bash
+    jupyter notebook notebooks/bmw_sales_analysis.ipynb
+    ```
 
-Apply oversampling/undersampling for imbalanced classes.
+4. **Run all cells** to reproduce:
+    - Data loading and cleaning  
+    - Exploratory Data Analysis (EDA)  
+    - Feature engineering  
+    - Model training and evaluation  
 
-Check for dominant features to avoid data leakage.
-pip install -r requirements.txt
-Launch the notebook:
-
-bash
-Копировать код
-jupyter notebook notebooks/BMW_Sales_EDA.ipynb
+> Make sure the `data/` folder contains the required CSV files:
+> - `BMW_sales_data.csv` (or your dataset)
