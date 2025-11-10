@@ -134,7 +134,14 @@ Other features contribute very little to the prediction.
     - Data loading and cleaning  
     - Exploratory Data Analysis (EDA)  
     - Feature engineering  
-    - Model training and evaluation  
+    - Model training and evaluation
 
 > Make sure the `data/` folder contains the required CSV files:
 > - `BMW_sales_data.csv` (or your dataset)
+  
+## License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+
+
