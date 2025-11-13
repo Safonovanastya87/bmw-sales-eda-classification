@@ -11,20 +11,25 @@
 
 ## Business Context & Problem Statement
 
-Automotive dealers and analysts need to predict whether a BMW model will have **high** or **low** sales in order to optimize inventory, marketing, and financial decisions.  
+### **Goal**  
+To predict whether a BMW model will achieve **high** or **low** sales, supporting data-driven decisions in **inventory**, **marketing**, and **financial strategy**.  
+A **Random Forest** classification model was developed using technical and market-related vehicle features.
 
-This project builds a **classification model** using features such as:
-**Model**,**Year**,**Region**,**Color**,**Fuel_Type,Transmission**,**Engine_Size_L**,**Mileage_KM**,**Price_USD**,**Sales_Volume** 
-to predict the target variable **Sales_Classification** (*High* / *Low*).
+---
 
-The dataset covers **BMW worldwide sales records from 2010 to 2024**,  
-including approximately **50,000 records**.
+### **Key Challenges**  
+- **Imbalanced target classes**, with significantly more low-selling models.  
+- **Potential data leakage** due to strong correlation between `Sales_Volume` and `Sales_Classification`.  
+- **Weak predictive power** of remaining independent features after target definition.  
 
-Based on the data:
-- **Low sales** correspond to models with `Sales_Volume` between **100–6,999 units**,  
-- **High sales** correspond to models with `Sales_Volume` between **7,000–9,999 units**.
+---
 
-This clear boundary in `Sales_Volume` strongly influences the target definition and raises potential concerns about **data leakage**, which the project investigates in detail.
+### **Tech Stack**  
+- **Language:** Python  
+- **Libraries:** `pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`  
+- **Model:** Random Forest Classifier  
+- **Techniques:** feature engineering, class balancing, hyperparameter tuning, model evaluation (`ROC-AUC`, `F1-score`), and data leakage analysis  
+
 
 
 ---
