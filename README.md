@@ -120,15 +120,15 @@ Other features contribute very little to the prediction.
 ## How to Run
 1. **Clone the repository to your local machine and navigate into the project directory:**
    ```bash
-    git clone https://github.com/Safonovanastya87/bmw-sales-eda-classification.git
-    cd bmw-sales-eda-classification
-    ```
+   git clone https://github.com/Safonovanastya87/bmw-sales-eda-classification.git
+   cd bmw-sales-eda-classification
+   ```
    
 
 2. **Install requirements:**
    ```bash
-    pip install -r requirements.txt
-    ```
+   pip install -r requirements.txt
+   ```
 
 3. **Make sure you also have `opendatasets` installed. If not, install it:**
     ```bash
