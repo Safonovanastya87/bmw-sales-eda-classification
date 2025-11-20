@@ -121,6 +121,7 @@ Other features contribute very little to the prediction.
 1. **Clone the repository to your local machine and navigate into the project directory:**
    ```bash
     git clone https://github.com/Safonovanastya87/bmw-sales-eda-classification.git
+    cd bmw-sales-eda-classification
     ```
    
 
@@ -144,21 +145,21 @@ The BMW Worldwide Sales dataset is hosted on Kaggle and is **not included** in t
 
 You can download it automatically in the notebook using your Kaggle account and API token (`kaggle.json` in `~/.kaggle/` or `%USERPROFILE%\.kaggle\`):
 
-```python
-import opendatasets as od
+   ```python
+   import opendatasets as od
 
-url = "https://www.kaggle.com/datasets/ahmadrazakashif/bmw-worldwide-sales-records-20102024/data"
-od.download(url)
-```
+   url = "https://www.kaggle.com/datasets/ahmadrazakashif/bmw-worldwide-sales-records-20102024/data"
+   od.download(url)
+   ```
 This will download the dataset folder bmw-worldwide-sales-records-20102024 in your current working directory.
 
 6. **Load the dataset in Jupyter Notebook:**
-```python
-import pandas as pd
+   ```python
+   import pandas as pd
 
-df_bmw_sales = pd.read_csv("bmw-worldwide-sales-records-20102024/BMW sales data (2010-2024) (1).csv")
-df_bmw_sales.head()
-```
+   df_bmw_sales = pd.read_csv("bmw-worldwide-sales-records-20102024/BMW sales data (2010-2024) (1).csv")
+   df_bmw_sales.head()
+   ```
 Make sure the path matches the downloaded folder. If you move the CSV to another location (e.g., data/raw/), update the path accordingly.
 
   
