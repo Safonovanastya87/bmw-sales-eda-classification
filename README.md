@@ -125,22 +125,22 @@ Other features contribute very little to the prediction.
     ```
    
 
-3. **Install requirements:**
+2. **Install requirements:**
    ```bash
     pip install -r requirements.txt
     ```
 
-4. **Make sure you also have `opendatasets` installed. If not, install it:**
+3. **Make sure you also have `opendatasets` installed. If not, install it:**
     ```bash
     pip install opendatasets
     ```
 
-5. **Open the Jupyter Notebook:**
+4. **Open the Jupyter Notebook:**
     ```bash
     jupyter notebook notebooks/bmw-sales-eda-classification.ipynb
     ```
 
-6. **Download the dataset:**
+5. **Download the dataset:**
 The BMW Worldwide Sales dataset is hosted on Kaggle and is **not included** in this repository.  
 
 You can download it automatically in the notebook using your Kaggle account and API token (`kaggle.json` in `~/.kaggle/` or `%USERPROFILE%\.kaggle\`):
