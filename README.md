@@ -118,23 +118,28 @@ Other features contribute very little to the prediction.
 ---
 
 ## How to Run
+1. **Clone the repository to your local machine and navigate into the project directory:**
+   ```bash
+    git clone https://github.com/Safonovanastya87/bmw-sales-eda-classification.git
+    ```
+   
 
-1. **Install requirements:**
+3. **Install requirements:**
    ```bash
     pip install -r requirements.txt
     ```
 
-2. **Make sure you also have `opendatasets` installed. If not, install it:**
+4. **Make sure you also have `opendatasets` installed. If not, install it:**
     ```bash
     pip install opendatasets
     ```
 
-3. **Open the Jupyter Notebook:**
+5. **Open the Jupyter Notebook:**
     ```bash
     jupyter notebook notebooks/bmw-sales-eda-classification.ipynb
     ```
 
-4. **Download the dataset:**
+6. **Download the dataset:**
 The BMW Worldwide Sales dataset is hosted on Kaggle and is **not included** in this repository.  
 
 You can download it automatically in the notebook using your Kaggle account and API token (`kaggle.json` in `~/.kaggle/` or `%USERPROFILE%\.kaggle\`):
@@ -147,7 +152,7 @@ od.download(url)
 ```
 This will download the dataset folder bmw-worldwide-sales-records-20102024 in your current working directory.
 
-4. **Load the dataset in Jupyter Notebook:**
+6. **Load the dataset in Jupyter Notebook:**
 ```python
 import pandas as pd
 
