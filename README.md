@@ -119,30 +119,43 @@ Other features contribute very little to the prediction.
 
 ## How to Run
 
-1. **Clone the repository:**
-    ```bash
-    git clone https://github.com/Safonovanastya87/bmw-sales-eda-classification.git
-    cd bmw-sales-eda-classification
+1. **Install requirements:**
+   ```bash
+    pip install -r requirements.txt
     ```
 
-2. **Install dependencies:**
+2. **Make sure you also have `opendatasets` installed. If not, install it:**
     ```bash
-    pip install -r requirements.txt
+    pip install opendatasets
     ```
 
 3. **Open the Jupyter Notebook:**
     ```bash
-    jupyter notebook notebooks/bmw_sales_analysis.ipynb
+    jupyter notebook notebooks/bmw-sales-eda-classification.ipynb
     ```
 
-4. **Run all cells** to reproduce:
-    - Data loading and cleaning  
-    - Exploratory Data Analysis (EDA)  
-    - Feature engineering  
-    - Model training and evaluation
+4. **Download the dataset:**
+The BMW Worldwide Sales dataset is hosted on Kaggle and is **not included** in this repository.  
 
-> Make sure the `data/` folder contains the required CSV files:
-> - `BMW_sales_data.csv` (or your dataset)
+You can download it automatically in the notebook using your Kaggle account and API token (`kaggle.json` in `~/.kaggle/` or `%USERPROFILE%\.kaggle\`):
+
+```python
+import opendatasets as od
+
+url = "https://www.kaggle.com/datasets/ahmadrazakashif/bmw-worldwide-sales-records-20102024/data"
+od.download(url)
+```
+This will download the dataset folder bmw-worldwide-sales-records-20102024 in your current working directory.
+
+4. **Load the dataset in Jupyter Notebook:**
+```python
+import pandas as pd
+
+df_bmw_sales = pd.read_csv("bmw-worldwide-sales-records-20102024/BMW sales data (2010-2024) (1).csv")
+df_bmw_sales.head()
+```
+Make sure the path matches the downloaded folder. If you move the CSV to another location (e.g., data/raw/), update the path accordingly.
+
   
 ## License
 
