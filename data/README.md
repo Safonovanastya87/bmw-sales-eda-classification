@@ -1,35 +1,48 @@
 # Data Directory
 
-This folder contains all **data files** used in the project **BMW Sales Classification**.
+This folder is reserved for the data files used in the **BMW Sales Classification** project.
 
-Due to file size limitations and licensing terms, the **raw dataset is not stored directly in the repository**.  
-Please download it manually from Kaggle using the link below.
+The raw dataset is not stored directly in this repository to keep the repository lightweight and to respect the dataset distribution terms.  
+Please download the dataset manually from Kaggle using the link below.
 
 ---
 
 ## Dataset Source
 
-- **Dataset:** [BMW Worldwide Sales Records (2010–2024)](https://www.kaggle.com/datasets/ahmadrazakashif/bmw-worldwide-sales-records-20102024?select=BMW+sales+data+%282010-2024%29+%281%29.csv)  
-- **Author:** Ahmad Raza Kashif  
-- **Platform:** Kaggle  
-- **Format:** CSV  
-- **Scope:** Worldwide BMW sales data from 2010 to 2024  
+- **Dataset:** [BMW Worldwide Sales Records (2010–2024)](https://www.kaggle.com/datasets/ahmadrazakashif/bmw-worldwide-sales-records-20102024)
+- **Author:** Ahmad Raza Kashif
+- **Platform:** Kaggle
+- **Format:** CSV
+- **Scope:** Worldwide BMW sales data from 2010 to 2024
 
 ---
 
+## Expected Local Structure
+
+After downloading the dataset, place the CSV file in the following local directory:
+
+```text
+data/bmw_sales/
+```
+
+Example:
+
+```text
+data/bmw_sales/BMW sales data (2010-2024) (1).csv
+```
+
+The project notebook expects the dataset to be available locally in this folder structure.
+
+---
 
 ## Notes
 
-- The dataset is publicly available on Kaggle under the author’s terms of use.  
-- Large files (typically >100 MB) are excluded from version control using `.gitignore`.  
-- For full reproducibility, please ensure consistent file naming and directory structure.  
+- The dataset is publicly available on Kaggle under the author's terms of use.
+- Raw data files are excluded from version control using `.gitignore`.
+- For reproducibility, please keep the downloaded file name and directory structure consistent with the notebook.
 
 ---
 
 ## Reference
 
-- [Kaggle Dataset Page](https://www.kaggle.com/datasets/ahmadrazakashif/bmw-worldwide-sales-records-20102024)sets/ahmadrazakashif/bmw-worldwide-sales-records-20102024)
-
----
-
-
+- [Kaggle Dataset Page](https://www.kaggle.com/datasets/ahmadrazakashif/bmw-worldwide-sales-records-20102024)
