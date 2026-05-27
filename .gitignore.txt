@@ -1,6 +1,23 @@
+# --- Data files ---
 *.csv
 *.xlsx
 *.zip
-.ipynb_checkpoints/
+
+# Keep data documentation
 data/*
 !data/README.md
+
+# --- Jupyter checkpoints ---
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# --- Temporary notebooks ---
+notebooks/Untitled*.ipynb
+
+# --- Python cache ---
+__pycache__/
+*.pyc
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
