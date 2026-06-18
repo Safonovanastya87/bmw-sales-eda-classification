@@ -82,12 +82,12 @@ A secondary objective is to investigate the influence of highly predictive varia
 
 ### Libraries
 
-* pandas
-* numpy
-* scikit-learn
-* matplotlib
-* seaborn
-* scipy
+* Pandas
+* Numpy
+* Scikit-learn
+* Matplotlib
+* Seaborn
+* Scipy
 
 ### Modeling Techniques
 
